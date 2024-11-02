@@ -184,6 +184,21 @@ const switchColor = function (colorTracker) {
 };
 
 const checkGuess = function () {
+  const animatedElement = document.getElementById("keyboardEnter");
+  animatedElement.animate([
+    {
+      width:"36px",
+      height: "36px",
+    },
+    {
+      width: "39px",
+      height: "39px",
+    }
+  ], {
+    duration: 150,
+    fill: "backwards",
+  })
+
   if (guesses[guessField][4] === "" || !checkDictionary()) {
     displayMessage("Invalid word");
     return;
@@ -237,6 +252,20 @@ const checkGuess = function () {
 };
 
 const addLetter = function (letter) {
+  const animatedElement = document.getElementById("keyboardLetter" + letter.toLowerCase());
+  animatedElement.animate([
+    {
+      width:"36px",
+      height: "36px",
+    },
+    {
+      width: "39px",
+      height: "39px",
+    }
+  ], {
+    duration: 150,
+    fill: "backwards",
+  })
   let i = 0;
 
   while (guesses[guessField][i] !== "" && i < 5) {
@@ -255,6 +284,21 @@ const addLetter = function (letter) {
 };
 
 const deleteLetter = function () {
+  const animatedElement = document.getElementById("keyboardDelete");
+  animatedElement.animate([
+    {
+      width:"36px",
+      height: "36px",
+    },
+    {
+      width: "39px",
+      height: "39px",
+    }
+  ], {
+    duration: 150,
+    fill: "backwards",
+  })
+
   if (guesses[guessField][0] === "") {
     return;
   }
