@@ -1,0 +1,150 @@
+html {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: auto;
+  font-size: 2.5rem;
+  padding: 0px 0px;
+}
+
+.streak {
+  padding: 10px 6px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: rgb(84, 84, 84);
+  opacity: 0.8;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  display: flexbox;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  max-width: 240px;
+  margin: auto;
+  margin-top: 6px;
+}
+
+.reset {
+  text-align: center;
+  margin: auto;
+}
+
+.resetButton {
+  margin: 1em;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background-color: #2a4828;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.message {
+  display: flexbox;
+  width: auto;
+  text-align: center;
+  margin: 10px 0px;
+  font-size: 1.2rem;
+}
+.guesses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.guesses div div {
+  width: 24px;
+  height: 24px;
+  margin: 3px 2px;
+  padding: 10px;
+  border: 2px solid rgb(84, 84, 84);
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+div div .correctPosition {
+  background-color: #538d4e;
+  border-color: transparent;
+}
+
+div div .incorrectPosition {
+  background-color: #b59f3b;
+  border-color: transparent;
+}
+
+div div .wrongLetter {
+  background-color: #3a3a3c;
+  border-color: transparent;
+}
+
+.keyboardCorrectPosition {
+  background-color: #538d4e;
+  border-color: transparent;
+}
+
+.keyboardIncorrectPosition {
+  background-color: #b59f3b;
+  border-color: transparent;
+}
+
+.keyboardWrongLetter {
+  background-color: #3a3a3c;
+  border-color: transparent;
+}
+
+.keyboard button {
+  cursor: pointer;
+}
+
+.keyboard {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.keyboardLetter {
+  width: 36px;
+  height: 36px;
+  padding: 4px;
+  margin: 2px;
+  min-width: fit-content;
+}
+
+.keyboardRow {
+  margin: auto;
+}
+
+/*
+.guesses div div {
+  width: 50px;
+  height: 50px;
+  margin: 3px 2px;
+  padding: 10px;
+  border: 2px solid rgb(84, 84, 84);
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 40px;
+
+  line-height: 48px;
+  font-weight: bold;
+}
+*/

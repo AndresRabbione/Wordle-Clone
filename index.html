@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordle</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <h1>Wordle</h1>
+      <div class="reset">
+        <button class="resetButton">Pick a random new word</button>
+      </div>
+      <div class="message">Welcome to Wordle (but not really)</div>
+      <div class="guesses"></div>
+      <div class="keyboard">
+        <div class="keyboardRow" id="keyRow1"></div>
+        <div class="keyboardRow" id="keyRow2"></div>
+        <div class="keyboardRow" id="keyRow3"></div>
+      </div>
+      <div class="streak">
+        Streak
+        <div id="streakLength">0</div>
+      </div>
+      <script type="module" src="./script.js"></script>
+    </div>
+  </body>
+</html>
