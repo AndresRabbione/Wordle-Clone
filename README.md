@@ -8,6 +8,8 @@ It was written with the aim to make it mostly HTML agnostic making all "under-th
 
 ## Usage Instructions (for laymen)
 
+**Ignore this section for now, simply opening the file woll not work. Fix is in the works**
+
 To play simply download the latest release files and unzip them wherever, so long as they are all within the same directory the game will function. To start just open _index.html_, this will open the game in your default browser.
 
 ## Credits
