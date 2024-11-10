@@ -83,6 +83,22 @@ const displayMessage = function (message) {
   document.querySelector(".message").textContent = message;
 };
 
+const animateKeyboard = function(element) {
+  const animatedElement = document.getElementById(element);
+  animatedElement.animate([
+    {
+      filter: "brightness(1)",
+    },
+    {
+      transform: "translateY(4px)",
+      filter: "brightness(1.25)",
+    }
+  ], {
+    duration: 150,
+    fill: "backwards",
+  })
+}
+
 const checkDictionary = function () {
   let word = "";
 
@@ -163,22 +179,7 @@ const switchColor = function (colorTracker) {
 };
 
 const checkGuess = function () {
-  const animatedElement = document.getElementById("keyboardEnter");
-  animatedElement.animate([
-    {
-      width:"36px",
-      height: "36px",
-      filter: "brightness(1)",
-    },
-    {
-      width: "39px",
-      height: "39px",
-      filter: "brightness(1.25)",
-    }
-  ], {
-    duration: 150,
-    fill: "backwards",
-  })
+  animateKeyboard("keyboardEnter");
 
   if (guesses[guessField][4] === "" || !checkDictionary()) {
     displayMessage("Invalid word");
@@ -233,22 +234,8 @@ const checkGuess = function () {
 };
 
 const addLetter = function (letter) {
-  const animatedElement = document.getElementById("keyboardLetter" + letter.toLowerCase());
-  animatedElement.animate([
-    {
-      width:"36px",
-      height: "36px",
-      filter: "brightness(1)",
-    },
-    {
-      width: "39px",
-      height: "39px",
-      filter: "brightness(1.25)",
-    }
-  ], {
-    duration: 150,
-    fill: "backwards",
-  })
+  animateKeyboard("keyboardLetter" + letter.toLowerCase());
+  
   let i = 0;
 
   while (guesses[guessField][i] !== "" && i < 5) {
@@ -267,22 +254,7 @@ const addLetter = function (letter) {
 };
 
 const deleteLetter = function () {
-  const animatedElement = document.getElementById("keyboardDelete");
-  animatedElement.animate([
-    {
-      width:"36px",
-      height: "36px",
-      filter: "brightness(1)",
-    },
-    {
-      width: "39px",
-      height: "39px",
-      filter: "brightness(1.25)",
-    }
-  ], {
-    duration: 150,
-    fill: "backwards",
-  })
+  animateKeyboard("keyboardDelete");
 
   if (guesses[guessField][0] === "") {
     return;

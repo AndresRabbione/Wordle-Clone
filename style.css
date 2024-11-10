@@ -124,10 +124,10 @@ div div .wrongLetter {
   width: 36px;
   height: 36px;
   padding: 4px;
-  margin: 2px;
+  margin: 4px;
   min-width: fit-content;
   border-radius: 4px;
-  border: 0px;
+  border: solid 0px #121212;
   animation-name: keyPress;
   animation-duration: 0.1s;
   animation-fill-mode: forwards;
