@@ -91,27 +91,6 @@ const checkDictionary = function () {
   }
 
   return set.has(word);
-
-  // if(guesses[guessField][4] === "") return false;
-
-  // let start = 0;
-  // let end = dictionary.length - 1;
-  // let middle = start + ~~((end - start) / 2);
-
-  // while (start <= end) {
-  //   if(dictionary[middle] === word) return true;
-
-  //   if(dictionary[middle] < word) {
-  //     start = middle + 1;
-  //   } else {
-  //     end = middle - 1;
-  //   }
-
-  //   middle = start + ~~((end - start) / 2);
-
-  // }
-
-  // return false;
 };
 
 const generateWord = function () {
@@ -189,10 +168,12 @@ const checkGuess = function () {
     {
       width:"36px",
       height: "36px",
+      filter: "brightness(1)",
     },
     {
       width: "39px",
       height: "39px",
+      filter: "brightness(1.25)",
     }
   ], {
     duration: 150,
@@ -257,10 +238,12 @@ const addLetter = function (letter) {
     {
       width:"36px",
       height: "36px",
+      filter: "brightness(1)",
     },
     {
       width: "39px",
       height: "39px",
+      filter: "brightness(1.25)",
     }
   ], {
     duration: 150,
@@ -289,10 +272,12 @@ const deleteLetter = function () {
     {
       width:"36px",
       height: "36px",
+      filter: "brightness(1)",
     },
     {
       width: "39px",
       height: "39px",
+      filter: "brightness(1.25)",
     }
   ], {
     duration: 150,
