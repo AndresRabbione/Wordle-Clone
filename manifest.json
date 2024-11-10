@@ -1,0 +1,13 @@
+{
+  "name": "wordle-clone",
+  "version": "1.0",
+  "manifest-version": 3,
+  "web_accessible_resources": [
+    {
+      "resources": ["*.html", "*.js", "*.css"],
+      "matches": ["<all_urls>"],
+      "extensions": []
+    }
+  ],
+  "homepage_url": "https://wordle-clone-seven-sigma.vercel.app/"
+}
