@@ -2,6 +2,9 @@
   "name": "wordle-clone",
   "version": "1.0",
   "manifest-version": 3,
+  "start_url": "https://wordle-clone-seven-sigma.vercel.app/",
+  "background_color": "#121212",
+  "description": "",
   "web_accessible_resources": [
     {
       "resources": ["*.html", "*.js", "*.css"],
