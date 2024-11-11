@@ -11,14 +11,12 @@
     {
       "src": "/logo-icon-192.png",
       "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any masked"
+      "sizes": "192x192"
     },
     {
       "src": "/logo-icon-512.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any masked"
+      "sizes": "512x512"
     }
   ],
   "web_accessible_resources": [
@@ -28,5 +26,19 @@
       "extensions": []
     }
   ],
-  "homepage_url": "https://wordle-clone-seven-sigma.vercel.app/"
+  "homepage_url": "https://wordle-clone-seven-sigma.vercel.app/",
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.png",
+      "type": "image/png",
+      "sizes": "1915x877",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-narrow.png",
+      "type": "image/png",
+      "sizes": "487x720",
+      "form_factor": "narrow"
+    }
+  ]
 }
