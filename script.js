@@ -150,7 +150,7 @@ const reduceCount = function (letter) {
 };
 
 const checkLoss = function () {
-  if(guessField > maxGuesses) {
+  if(guessField >= maxGuesses) {
     lose();
   }
 
@@ -288,7 +288,7 @@ const lose = function () {
   for (let i = 0; i < 5; i++) {
     word += correctWord[i];
   }
-  displayMessage(`You lost, the word was: ${word}`)
+  displayMessage(`You lost, the word was: ${word.toUpperCase()}`);
   completion = true
   streak = 0;
   document.getElementById("streakLength").textContent = streak;
