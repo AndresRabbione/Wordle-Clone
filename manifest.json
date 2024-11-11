@@ -1,10 +1,26 @@
 {
   "name": "wordle-clone",
+  "short_name": "Wordle Clone",
   "version": "1.0",
   "manifest-version": 3,
   "start_url": "https://wordle-clone-seven-sigma.vercel.app/",
   "background_color": "#121212",
-  "description": "",
+  "description": "A simple Wordle clone",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "/logo-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any masked"
+    },
+    {
+      "src": "/logo-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any masked"
+    }
+  ],
   "web_accessible_resources": [
     {
       "resources": ["*.html", "*.js", "*.css"],
