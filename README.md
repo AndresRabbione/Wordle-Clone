@@ -8,7 +8,7 @@ It was written with the aim to make it mostly HTML agnostic making all "under-th
 
 ## For Laymen Use
 
-The game is now hosted using [Vercel](vercel.com) at the folloing [link](https://wordle-clone-seven-sigma.vercel.app/).
+The game is now hosted using [Vercel](vercel.com) at the folloing [link](https://wordle-clone-andres-rabbiones-projects.vercel.app/).
 
 ## Credits
 
