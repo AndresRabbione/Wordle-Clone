@@ -82,9 +82,10 @@ thirdRowElement.appendChild(keyboardDelete);
 
 const displayMessage = function (message) {
   if (messageLockout) {
-    setTimeout(() => {
+    let timerID = setTimeout(() => {
       messageLockout = false;
-    }, "1500");
+      clearTimeout(timerID);
+    }, 1500);
 
     return;
   }
