@@ -19,6 +19,7 @@ let guessField = 0;
 let previousWord = "";
 let streak = 0;
 let completion = false;
+let messageLockout = false;
 let keyboardTracker = [["q", "none"], ["w", "none"], ["e", "none"], ["r", "none"], ["t", "none"], ["y", "none"], ["u", "none"], ["i", "none"], ["o", "none"], ["p", "none"], ["a", "none"], ["s", "none"], ["d", "none"], ["f", "none"], ["g", "none"], ["h", "none"], ["j", "none"], ["k", "none"], ["l", "none"], ["z", "none"], ["x", "none"], ["c", "none"], ["v", "none"], ["b", "none"], ["n", "none"], ["m", "none"]];
 
 const guessElement = document.querySelector(".guesses");
@@ -80,6 +81,14 @@ keyboardDelete.setAttribute("class", "keyboardLetter");
 thirdRowElement.appendChild(keyboardDelete);
 
 const displayMessage = function (message) {
+  if (messageLockout) {
+    setTimeout(() => {
+      messageLockout = false;
+    }, "1500");
+
+    return;
+  }
+
   document.querySelector(".message").textContent = message;
 };
 
@@ -289,6 +298,7 @@ const lose = function () {
     word += correctWord[i];
   }
   displayMessage(`You lost, the word was: ${word.toUpperCase()}`);
+  messageLockout = true;
   completion = true
   streak = 0;
   document.getElementById("streakLength").textContent = streak;
@@ -400,6 +410,7 @@ document.querySelector(".reset").addEventListener("click", function() {
   ];
   guessField = 0;
   completion = false;
+  messageLockout = false;
   generateWord();
   displayMessage('Welcome to Wordle (but not really)');
   document.querySelector(".resetButton").blur();
