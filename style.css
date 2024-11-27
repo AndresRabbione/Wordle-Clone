@@ -1,9 +1,7 @@
-html {
-  color-scheme: light dark;
-}
-
 body {
   font-family: sans-serif;
+  background-color: #121212;
+  color: #dddddd;
 }
 
 h1 {
@@ -17,15 +15,12 @@ h1 {
   padding: 10px 6px;
   font-size: 1rem;
   border-radius: 10px;
-  background-color: rgb(84, 84, 84);
+  background-color: #545454;
   opacity: 0.8;
   font-weight: bold;
   border: none;
   text-align: center;
-  display: flexbox;
   width: auto;
-  align-items: center;
-  justify-content: center;
   vertical-align: middle;
   max-width: 240px;
   margin: auto;
@@ -46,14 +41,15 @@ h1 {
   font-weight: bold;
   border: none;
   cursor: pointer;
+  color: #dddddd;
 }
 
 .message {
-  display: flexbox;
   width: auto;
   text-align: center;
-  margin: 10px 0px;
+  margin: 5px 35%;
   font-size: 1.2rem;
+  padding: 5px 0px;
 }
 .guesses {
   display: flex;
@@ -68,7 +64,7 @@ h1 {
   height: 24px;
   margin: 3px 2px;
   padding: 10px;
-  border: 2px solid rgb(84, 84, 84);
+  border: 2px solid #545454;
   text-align: center;
   vertical-align: middle;
   display: inline-block;
@@ -93,17 +89,17 @@ div div .wrongLetter {
 }
 
 .keyboardCorrectPosition {
-  background-color: #538d4e;
+  background-color: #538d4e !important;
   border-color: transparent;
 }
 
 .keyboardIncorrectPosition {
-  background-color: #b59f3b;
+  background-color: #b59f3b !important;
   border-color: transparent;
 }
 
 .keyboardWrongLetter {
-  background-color: #3a3a3c;
+  background-color: #3a3a3c !important;
   border-color: transparent;
 }
 
@@ -124,13 +120,13 @@ div div .wrongLetter {
   width: 36px;
   height: 36px;
   padding: 4px;
-  margin: 4px;
+  margin: 2px;
   min-width: fit-content;
   border-radius: 4px;
   border: solid 0px #121212;
-  animation-name: keyPress;
-  animation-duration: 0.1s;
-  animation-fill-mode: forwards;
+  background-color: #636363;
+  color: #dddddd;
+  font-weight: bold;
 }
 
 .keyboardRow {

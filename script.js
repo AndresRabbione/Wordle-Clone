@@ -80,7 +80,7 @@ keyboardDelete.setAttribute("id", "keyboardDelete");
 keyboardDelete.setAttribute("class", "keyboardLetter");
 thirdRowElement.appendChild(keyboardDelete);
 
-const displayMessage = function (message) {
+const displayMessage = function (message, animate) {
   if (messageLockout) {
     let timerID = setTimeout(() => {
       messageLockout = false;
@@ -90,6 +90,11 @@ const displayMessage = function (message) {
     return;
   }
 
+  if(animate) {
+    const animatedElement = document.querySelector(".message");
+    animatedElement.animate([{backgroundColor: "#121212"}, {'backgroundColor': "#535454"}], {duration: 250, fill: "backwards"})
+  }
+
   document.querySelector(".message").textContent = message;
 };
 
@@ -97,6 +102,7 @@ const animateKeyboard = function(element) {
   const animatedElement = document.getElementById(element);
   animatedElement.animate([
     {
+      transform: "translateY(0px)",
       filter: "brightness(1)",
     },
     {
@@ -192,7 +198,7 @@ const checkGuess = function () {
   animateKeyboard("keyboardEnter");
 
   if (guesses[guessField][4] === "" || !checkDictionary()) {
-    displayMessage("Invalid word");
+    displayMessage("Invalid word", true);
     return;
   }
 
@@ -229,7 +235,7 @@ const checkGuess = function () {
     i++;
   }
 
-  displayMessage("Welcome to wordle (but not really)");
+  displayMessage("Welcome to wordle (but not really)", false);
 
   if (allGreen) {
     win();
@@ -253,7 +259,7 @@ const addLetter = function (letter) {
   }
 
   if (i === 5) {
-    displayMessage("Your word is full");
+    displayMessage("Your word is full", true);
     return;
   }
 
@@ -279,13 +285,13 @@ const deleteLetter = function () {
   guesses[guessField][i] = "";
   document.getElementById("letter" + String((guessField + 1)) + (i + 1)).textContent = "";
 
-  displayMessage("Welcome to wordle (but not really)");
+  displayMessage("Welcome to wordle (but not really)", false);
 
   return;
 };
 
 const win = function () {
-  displayMessage("You won!");
+  displayMessage("You won!", true);
   completion = true;
   streak++;
   document.getElementById("streakLength").textContent = streak;
@@ -298,7 +304,7 @@ const lose = function () {
   for (let i = 0; i < 5; i++) {
     word += correctWord[i];
   }
-  displayMessage(`You lost, the word was: ${word.toUpperCase()}`);
+  displayMessage(`You lost, the word was: ${word.toUpperCase()}`, true);
   messageLockout = true;
   completion = true
   streak = 0;
@@ -359,7 +365,7 @@ generateWord();
 
 document.body.addEventListener("keyup", (ev) => {
   if (completion) {
-    displayMessage("This round is over, generate a new word to keep playing");
+    displayMessage("This round is over, generate a new word to keep playing", true);
     return;
   }
 
@@ -413,13 +419,13 @@ document.querySelector(".reset").addEventListener("click", function() {
   completion = false;
   messageLockout = false;
   generateWord();
-  displayMessage('Welcome to Wordle (but not really)');
+  displayMessage('Welcome to Wordle (but not really)', false);
   document.querySelector(".resetButton").blur();
 })
 
 document.getElementById("keyboardEnter").addEventListener("click", function() {
   if (completion) {
-    displayMessage("This round is over, generate a new word to keep playing");
+    displayMessage("This round is over, generate a new word to keep playing", true);
     return;
   }
 
@@ -428,7 +434,7 @@ document.getElementById("keyboardEnter").addEventListener("click", function() {
 
 document.getElementById("keyboardDelete").addEventListener("click", function() {
   if (completion) {
-    displayMessage("This round is over, generate a new word to keep playing");
+    displayMessage("This round is over, generate a new word to keep playing", true);
     return;
   }
 
@@ -438,7 +444,7 @@ document.getElementById("keyboardDelete").addEventListener("click", function() {
 document.querySelectorAll(".keyboardLetter").forEach(element => {
   element.addEventListener("click", function() {
     if (completion) {
-      displayMessage("This round is over, generate a new word to keep playing");
+      displayMessage("This round is over, generate a new word to keep playing", true);
       return;
     }
 
